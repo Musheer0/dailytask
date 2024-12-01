@@ -9,7 +9,7 @@ const app = new Hono()
     const payload = c.req.valid("json");
     const {name, goals, duration} = await c.req.json()
     console.log(name, goals, duration)
-    const data = await CreateTask(payload);
+    const data = await CreateTask({name, goals, duration});
     return c.json(data);
     
 })
